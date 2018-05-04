@@ -1,0 +1,32 @@
+package com.affinity.qa.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.affinity.qa.base.TestBase;
+
+public class PracticePage extends TestBase  {
+@FindBy(xpath="//div[contains(text(),'Practice')]")
+WebElement practiceTab;
+
+@FindBy(css="body > div:nth-child(1) > b")
+WebElement practicePage;
+//Initializing Page Objects- OR
+
+public PracticePage(){
+	PageFactory.initElements(driver, this);
+}
+
+public void clickPracticeTab(){
+	practiceTab.click();
+}
+public boolean verifyPracticePage(){
+	return practicePage.isDisplayed();
+}
+public PharmacyPage landToPharmacyPage(){
+	return new PharmacyPage();
+}
+
+
+}

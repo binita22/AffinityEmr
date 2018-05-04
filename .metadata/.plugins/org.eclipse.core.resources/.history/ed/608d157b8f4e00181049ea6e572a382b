@@ -1,0 +1,43 @@
+package com.affinity.qa.pages;
+
+import java.util.Calendar;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.affinity.qa.base.TestBase;
+
+public class AdminPage extends TestBase {
+@FindBy(css="#username > span:nth-child(1)")
+WebElement userNameLabel;
+
+@FindBy(xpath="//*[@id="menu logo"]/div/div/span[1]/div")
+WebElement calendar;
+
+@FindBy(css="#menu\20 logo > div > div > span:nth-child(3) > div")
+WebElement message;
+
+//Initializing the Page Objects:
+public AdminPage(){
+	PageFactory.initElements(driver, this);
+}
+
+public boolean verifyCorrectUser(){
+	return userNameLabel.isDisplayed();
+}
+public String verifyHomePageTitle(){
+	return driver.getTitle();
+	
+}
+public CalendarPage clickOnCalendar(){
+	calendar.click();
+	return new CalendarPage();
+}
+public MessagePage clickOnMessage(){
+	message.click();
+	return new MessagePage();
+}
+
+
+}

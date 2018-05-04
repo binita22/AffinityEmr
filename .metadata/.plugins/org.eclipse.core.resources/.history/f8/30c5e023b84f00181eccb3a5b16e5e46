@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Affinity Health EMR Test Automation Test Suite">
+<listeners>
+<listener class-name="">
+</listener>
+</listeners>
+	<test name="Affinity EMR Test Cases">
+		<classes>
+			<class name="com.affinity.qa.tests.LoginPageTest" />
+			<class name="com.affinity.qa.tests.AdminPageTest" />
+			<class name="com.affinity.qa.tests.CalendarPageTest" />
+		</classes>
+	</test>
+</suite> 

@@ -1,0 +1,47 @@
+package com.affinity.qa.tests;
+
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.affinity.qa.base.TestBase;
+import com.affinity.qa.pages.AdminPage;
+import com.affinity.qa.pages.CalendarPage;
+import com.affinity.qa.pages.LoginPage;
+import com.affinity.qa.pages.MessagePage;
+
+public class calendarTest extends TestBase {
+
+	LoginPage loginPage;
+	AdminPage adminPage;
+	CalendarPage calendarPage;
+	public calendarTest() {
+		super();
+	}
+
+	@BeforeMethod
+	public void setUp() {
+		initialization();
+		loginPage = new LoginPage();
+		adminPage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		calendarPage = new CalendarPage();
+	}
+	
+	@Test(priority=1)
+	public void verifyHomePageTitleTest(){
+		String adminPageTitle = adminPage.verifyHomePageTitle();
+		Assert.assertEquals(adminPageTitle, "OpenEMR", "Admin page title not match");
+		
+	}
+	@Test(priority=2)
+	public void verifyUserNameTest(){
+	Assert.assertTrue(adminPage.verifyCorrectUser());			
+	}
+
+	
+	@AfterMethod()
+	public void tearDown() {
+		driver.quit();
+	}
+}

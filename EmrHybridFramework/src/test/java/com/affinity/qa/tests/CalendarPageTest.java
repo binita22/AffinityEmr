@@ -1,0 +1,45 @@
+package com.affinity.qa.tests;
+
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.affinity.qa.base.TestBase;
+import com.affinity.qa.pages.AdminPage;
+import com.affinity.qa.pages.CalendarPage;
+import com.affinity.qa.pages.LoginPage;
+
+public class CalendarPageTest extends TestBase {
+
+	LoginPage loginPage;
+	AdminPage adminPage;
+	CalendarPage calendarPage;
+
+	public CalendarPageTest() {
+		super();
+	}
+
+	@BeforeMethod
+	public void setUp() {
+		initialization();
+		loginPage = new LoginPage();
+		adminPage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		calendarPage = new CalendarPage();
+	}
+
+	@Test(priority = 1)
+	public void verifyCalendarPageLabel() {
+		Assert.assertTrue(calendarPage.verifyCalendarLabel(), "Calendar Label is missing on the page");
+	}
+
+	@Test(priority = 2)
+	public void appointmentPageLabel() {
+		Assert.assertTrue(calendarPage.appointmentLabel(), "Appointment Label is missing on the page");
+	}
+
+	@AfterMethod()
+	public void tearDown() {
+		driver.quit();
+	}
+}

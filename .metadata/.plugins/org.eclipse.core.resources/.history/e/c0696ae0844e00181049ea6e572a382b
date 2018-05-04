@@ -1,0 +1,11 @@
+package com.affinity.qa.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.affinity.qa.base.TestBase;
+
+public class AdminPage extends TestBase {
+@FindBy(xpath="//*[@id="username"]")
+WebElement userNameLabel;
+}

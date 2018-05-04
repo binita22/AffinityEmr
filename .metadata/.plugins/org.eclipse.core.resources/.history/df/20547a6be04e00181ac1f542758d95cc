@@ -1,0 +1,20 @@
+package com.affinity.qa.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.affinity.qa.base.TestBase;
+
+public class PharmacyPage extends TestBase  {
+@FindBy(xpath="//span[contains(text(),'Add a Pharmacy')]")
+WebElement addPharmacyButton;
+
+@FindBy(name="name")
+WebElement pharmacyName;
+
+@FindBy(name="address_line1")
+WebElement pharmacyAdd;
+
+@FindBy(name="zip")
+WebElement zip;
+}

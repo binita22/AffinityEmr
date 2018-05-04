@@ -1,0 +1,4 @@
+url= http://demo.openemr.io/openemr/interface/login/login.php?site=default
+username = admin
+password = pass1
+browser = chrome

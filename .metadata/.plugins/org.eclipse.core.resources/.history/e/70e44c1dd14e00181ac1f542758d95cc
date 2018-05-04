@@ -1,0 +1,11 @@
+package com.affinity.qa.pages;
+
+import org.openqa.selenium.WebElement;
+
+import com.affinity.qa.base.TestBase;
+
+public class Practice extends TestBase  {
+@FindyBy(xpath="//div[contains(text(),'Practice')]")
+WebElement practiceTab;
+
+}

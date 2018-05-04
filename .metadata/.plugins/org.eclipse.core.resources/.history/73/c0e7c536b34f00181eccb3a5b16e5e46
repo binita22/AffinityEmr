@@ -1,0 +1,5 @@
+package com.affinity.qa.extentReportListener;
+
+public class ExtentReportListener {
+
+}

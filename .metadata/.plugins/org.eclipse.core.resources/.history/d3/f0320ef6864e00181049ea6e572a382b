@@ -1,0 +1,5 @@
+package com.affinity.qa.pages;
+
+public class CalendarPage extends TestBase {
+
+}

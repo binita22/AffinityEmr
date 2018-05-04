@@ -1,0 +1,8 @@
+package com.affinity.qa.pages;
+
+import com.affinity.qa.base.TestBase;
+
+public class CalendarPage extends TestBase {
+@FindBy(xpath="")
+WebElement calendr;
+}

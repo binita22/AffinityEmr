@@ -1,0 +1,5 @@
+package com.affinity.qa.tests;
+
+public class AdminPageTest extends TestBase {
+
+}

@@ -1,0 +1,12 @@
+package com.affinity.qa.tests;
+
+import org.testng.annotations.BeforeMethod;
+
+import com.affinity.qa.base.TestBase;
+
+public class LoginPageTest extends TestBase {
+	@BeforeMethod
+	public void setUp(){
+		initialization();
+	}
+}

@@ -1,0 +1,37 @@
+package com.affinity.qa.tests;
+
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.affinity.qa.base.TestBase;
+import com.affinity.qa.pages.AdminPage;
+import com.affinity.qa.pages.LoginPage;
+import com.affinity.qa.pages.PharmacyPage;
+import com.affinity.qa.pages.PracticePage;
+
+public class PharmacyTest extends TestBase {
+	LoginPage loginPage;
+	AdminPage adminPage;
+	PracticePage practicePage;
+	PharmacyPage pharmacyPage;
+	public PharmacyTest(){
+		super();
+	}
+	@BeforeMethod
+	public void setUp() {
+		initialization();
+		loginPage = new LoginPage();
+		adminPage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		practicePage = new PracticePage();
+		practicePage.clickPracticeTab();
+		pharmacyPage = new PharmacyPage();
+	}
+	
+	@Test(priority=1)
+	public void validatCreateNewPharmacy(){
+		pharmacyPage.clickPharmacy();
+		pharmacyPage.addNewPharmacy("Binita Pharmacy", "Corona", "11345");
+
+	}
+	
+}

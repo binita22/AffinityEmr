@@ -1,0 +1,8 @@
+package com.affinity.qa.tests;
+
+public class PracticeTest {
+
+	public PracticeTest(){
+		super();
+	}
+}

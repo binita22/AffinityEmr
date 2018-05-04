@@ -1,0 +1,5 @@
+package com.affinity.qa.base;
+
+public class TestBase {
+
+}

@@ -1,0 +1,31 @@
+package com.affinity.qa.tests;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
+import com.affinity.qa.base.TestBase;
+import com.affinity.qa.pages.AdminPage;
+import com.affinity.qa.pages.LoginPage;
+
+public class AdminPageTest extends TestBase {
+	LoginPage loginPage;
+	AdminPage adminPage;
+
+	public AdminPageTest() {
+		super();
+	}
+
+	@BeforeMethod
+	public void setUp() {
+		initialization();
+		loginPage = new LoginPage();
+		adminPage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+	}
+
+	
+	@AfterMethod()
+	public void tearDown() {
+		driver.quit();
+	}
+
+}
